@@ -9,7 +9,7 @@ django-cors-headers==4.0.0
 djangorestframework==3.14.0
 gunicorn==21.2.0
 idna==3.4
-imageio==2.31.4
+imageio==2.31.1
 imageio-ffmpeg==0.4.9
 moviepy==1.0.3
 numpy==1.26.0
