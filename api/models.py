@@ -6,3 +6,4 @@ from cloudinary_storage.validators import validate_video
 
 class Video(models.Model):
 	video = models.FileField(upload_to='video/%Y-%m-%d', storage=VideoMediaCloudinaryStorage(), validators=[validate_video])
+	transcription = models.TextField(null=True, blank=True)

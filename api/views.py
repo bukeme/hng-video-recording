@@ -2,6 +2,7 @@ from rest_framework import generics, mixins
 from rest_framework.parsers import FormParser, MultiPartParser
 from .serializers import VideoSerializer
 from .models import Video
+from .utils import video_transcription
 
 
 class VideoAPIView(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, generics.GenericAPIView):
@@ -16,3 +17,8 @@ class VideoAPIView(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.Retrie
 
 	def post(self, request, *args, **kwargs):
 		return self.create(request, *args, **kwargs)
+
+	def perform_create(self, serializer):
+		obj = serializer.save()
+		obj.transcription = video_transcription(obj.video.url)
+		obj.save()
