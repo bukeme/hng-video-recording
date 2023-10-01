@@ -14,7 +14,7 @@ imageio-ffmpeg==0.4.9
 moviepy==1.0.3
 numpy==1.21.5
 packaging==23.1
-Pillow==10.0.1
+Pillow==9.4.0
 proglog==0.1.10
 psycopg2-binary==2.9.8
 python-dotenv==0.21.0
